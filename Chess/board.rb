@@ -23,7 +23,7 @@ class Board
       raise "Square is already taken"
     end 
     
-    @chess_board[r][c], @chess_board[x][y] = @chess_board[x][y], @chess_board[r][c]
+    @chess_board[r][c], @chess_board[x][y] = @chess_board[x][y], @chess_board[r][c] 
   end 
 
 
