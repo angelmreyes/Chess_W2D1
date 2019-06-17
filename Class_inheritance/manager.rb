@@ -11,7 +11,7 @@ class Manager < Employee
 end 
 
 if $PROGRAM_NAME == __FILE__
-  manager1 = Manager.new("Joe", "manager", 1000, "CEO")
+  manager1 = Manager.new("Ned", "manager", 1000, "CEO")
   employee1 = Employee.new("Jane", "worker", 500, "Joe")
   manager2 = Manager.new("Chris", "manager", 1000, "Joe")
   employee2 = Employee.new("John", "worker", 600, "Chris") 
