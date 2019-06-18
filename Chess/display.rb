@@ -3,9 +3,11 @@ require_relative "cursor"
 require_relative "piece"
 require "colorize"
 
+require "byebug"
+
 class Display
 
-  attr_reader :board
+  attr_reader :board, :cursor
 
   def initialize(board)
     @cursor = Cursor.new([0,0], board)
@@ -37,6 +39,11 @@ class Display
       end 
       puts r 
     end 
+  end
+
+  def move
+    #debugger
+    self.render(self.board, self.cursor.get_input)
   end
    
 

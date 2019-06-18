@@ -62,9 +62,31 @@ if $PROGRAM_NAME == __FILE__
   # end
   chess = Board.new
   display = Display.new(chess)
-  display.render(chess, [2, 1])
+  while true
+    display.move
+    puts 
+    puts
+  end
+  # display.render(chess, [2, 1])
   puts 
   puts
-  chess.move_piece([0,0], [3,0])
-  display.render(chess, [3, 1])
+  # chess.move_piece([0,0], [3,0])
+  # display.render(chess, [3, 1])
+
+  #  diff = [1, 0]
+  #  pos = [0, 0]
+  #  def update_pos(diff, pos, chess)
+  #   x, y = diff
+  #   r, c = pos
+  #   a = x + r
+  #   b = y + c
+  #   if chess.valid_pos?([a, b])
+  #     pos = [a, b]
+  #     p pos
+  #     return pos
+  #   end
+  # end
+
+  # p update_pos(diff, pos, chess)
+
 end
