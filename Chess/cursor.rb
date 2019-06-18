@@ -42,8 +42,13 @@ class Cursor
   end
 
   def get_input
-    key = KEYMAP[read_char]
-    handle_key(key)
+    begin
+      key = KEYMAP[read_char]
+      handle_key(key)
+    rescue StandardError
+      puts "Don't go off the board."
+      retry
+    end
   end
 
   #private
@@ -97,14 +102,14 @@ class Cursor
   end
 
   def update_pos(diff)
-    pos = []
     x, y = diff
     r, c = self.cursor_pos 
     a = x + r
     b = y + c
     if board.valid_pos?([a, b])
-      pos = self.cursor_pos = [a, b]
-      return pos
+      return self.cursor_pos = [a, b]
+    else
+      raise StandardError
     end
   end
 end

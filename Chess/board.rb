@@ -39,27 +39,11 @@ class Board
     x, y = position
     (0..7).any? { |n| n == x } && (0..7).any? { |n| n == y }
   end
-
-
 end
 
 
 
 if $PROGRAM_NAME == __FILE__
-  # chess.chess_board.each_with_index do |row, i|
-  #   r = ""
-  #
-  #   row.each_with_index do |square|
-  #     if i.even? 
-  #       square.nil? ? r += "   ".yellow.on_yellow : r += " #{square} ".blue.on_yellow
-  #     else
-  #       square.nil? ? r += "   ".green.on_green : r += " #{square} ".blue.on_green
-  #     end
-  #     i += 1 
-  #   end
-  #
-  #   puts r    
-  # end
   chess = Board.new
   display = Display.new(chess)
   while true
@@ -67,26 +51,7 @@ if $PROGRAM_NAME == __FILE__
     puts 
     puts
   end
-  # display.render(chess, [2, 1])
   puts 
   puts
   # chess.move_piece([0,0], [3,0])
-  # display.render(chess, [3, 1])
-
-  #  diff = [1, 0]
-  #  pos = [0, 0]
-  #  def update_pos(diff, pos, chess)
-  #   x, y = diff
-  #   r, c = pos
-  #   a = x + r
-  #   b = y + c
-  #   if chess.valid_pos?([a, b])
-  #     pos = [a, b]
-  #     p pos
-  #     return pos
-  #   end
-  # end
-
-  # p update_pos(diff, pos, chess)
-
 end

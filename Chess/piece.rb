@@ -1,4 +1,3 @@
-
 class Piece
   attr_reader :piece, :empty_piece
 

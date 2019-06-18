@@ -15,11 +15,12 @@ class Display
   end
 
   def render(board, cursor_position)
+    system("clear")
     board.chess_board.each_with_index do |row, i|
       r = ""
+      x = i
       row.each_with_index do |square, j|
-        #p "square = #{[i, j]}"
-        position = [i, j]
+        position = [x, j]
         if i.even? 
           case square 
           when "-"
@@ -42,20 +43,6 @@ class Display
   end
 
   def move
-    #debugger
     self.render(self.board, self.cursor.get_input)
   end
-   
-
-  #board[cursor.cursor_pos] render in different color
-  #p "[i, j]= #{[i, j]} cursor= #{cursor_position}"
-    # when  bool #&& "-"
-    #     r += "   ".red.on_red 
-    # when bool #&& "X"
-    #     r += " #{square} ".blue.on_red
-    # when  bool #&& "-"
-    #     r += "   ".red.on_red 
-    # when bool #&& "X"
-    #     r += " #{square} ".blue.on_red
-    # end  
 end
